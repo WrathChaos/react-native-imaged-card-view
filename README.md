@@ -117,6 +117,9 @@ It is also fully customizable
 
 Change log will be here !
 
+# Credits
+I inspired the design by **[Olivia Graphics](https://dribbble.com/shots/6572604-Travel-App-Design)**. Thank you for this awesome design :)
+
 ## Author
 
 FreakyCoder, kurayogun@gmail.com
