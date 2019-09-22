@@ -1,6 +1,6 @@
 {
   "name": "react-native-imaged-card-view",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "Rising Imaged Card View with Awesome Shadows and Fully Customizable Library for React Native",
   "keywords": [
     "image",
@@ -26,6 +26,9 @@
   "repository": "git@github.com:WrathChaos/react-native-imaged-card-view.git",
   "author": "Kuray (FreakyCoder) <kurayogun@gmail.com>",
   "license": "MIT",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "peerDependencies": {
     "react": ">= 16.8.6",
     "react-native": ">= 0.60.5",
