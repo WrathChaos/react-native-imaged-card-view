@@ -1,8 +1,15 @@
 {
   "name": "react-native-imaged-card-view",
-  "version": "0.0.11",
-  "description": "Description for library",
+  "version": "0.0.1",
+  "description": "Rising Imaged Card View with Awesome Shadows and Fully Customizable Library for React Native",
   "keywords": [
+    "image",
+    "card",
+    "view",
+    "imaged",
+    "rising",
+    "fully-customizable",
+    "customizable",
     "FreakyCoder",
     "freakycoder",
     "kuray",
