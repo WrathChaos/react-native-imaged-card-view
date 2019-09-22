@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
-import { View, StatusBar, ScrollView, SafeAreaView } from "react-native";
-import ImagedCardView from "./lib/src/components/ImagedCardView";
+import { StatusBar, ScrollView, SafeAreaView } from "react-native";
+import ImagedCardView from "./lib/src/ImagedCardView";
 
 const yosemite =
   "https://images.unsplash.com/photo-1548625361-1adcab316530?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80";

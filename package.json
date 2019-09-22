@@ -1,5 +1,5 @@
 {
-  "name": "react-native-library-boilerplate",
+  "name": "react-native-imaged-card-view",
   "version": "0.0.11",
   "description": "Description for library",
   "keywords": [
@@ -14,13 +14,18 @@
     "rn"
   ],
   "homepage": "https://www.freakycoder.com",
-  "bugs": "https://github.com/WrathChaos/react-native-library-boilerplate/issues",
-  "main": "./lib/src/index.js",
-  "repository": "git@github.com:WrathChaos/react-native-library-boilerplate.git",
+  "bugs": "https://github.com/WrathChaos/react-native-imaged-card-view/issues",
+  "main": "./lib/src/ImagedCardView",
+  "repository": "git@github.com:WrathChaos/react-native-imaged-card-view.git",
   "author": "Kuray (FreakyCoder) <kurayogun@gmail.com>",
   "license": "MIT",
   "peerDependencies": {
-    "react": ">= 16.x.x",
-    "react-native": ">= 0.55.x"
+    "react": ">= 16.8.6",
+    "react-native": ">= 0.60.5",
+    "react-native-androw": ">= 0.0.33",
+    "react-number-format": ">= 4.2.0",
+    "react-native-star-review": ">= 0.0.23",
+    "react-native-vector-icons": ">= 6.6.0",
+    "react-native-dynamic-vector-icons": ">= 0.2.1"
   }
 }
