@@ -1,16 +1,44 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import {Text, View, Dimensions} from 'react-native';
-import ImageContainer from '../ImageContainer/ImageContainer';
-import StarReview from 'react-native-star-review';
-const {width, height} = Dimensions.get('window');
+import React from "react";
+import PropTypes from "prop-types";
+import { Text, View, Dimensions } from "react-native";
+import ImageContainer from "../ImageContainer/ImageContainer";
+import StarReview from "react-native-star-review";
+import styles, {
+  container,
+  titleStyle,
+  dividerStyle,
+  leftSideTitleStyle,
+  leftSideValueStyle,
+  rightSideTitleStyle,
+  rightSideValueStyle
+} from "./CardContainer.style";
+
+const { width } = Dimensions.get("window");
 
 const CardContainer = props => {
-  const {title, subtitle} = props;
+  const {
+    title,
+    width,
+    height,
+    subtitle,
+    titleColor,
+    borderRadius,
+    dividerColor,
+    leftSideTitle,
+    leftSideValue,
+    leftSideColor,
+    subtitleColor,
+    rightSideTitle,
+    rightSideValue,
+    rightSideColor,
+    backgroundColor,
+    leftSideValueColor,
+    rightSideValueColor
+  } = props;
 
   renderStarReview = () => {
     return (
-      <View style={{alignSelf: 'flex-start', marginTop: 16}}>
+      <View style={styles.starReviewStyle}>
         <StarReview
           stars={5}
           ratings={5}
@@ -19,79 +47,37 @@ const CardContainer = props => {
           reviews={1952}
           enableParentheses
           starColor="white"
-          reviewTextStyle={{
-            fontSize: 11,
-            color: 'white',
-            fontWeight: 'bold',
-          }}
+          reviewTextStyle={styles.reviewTextStyle}
+          {...props}
         />
       </View>
     );
   };
 
   return (
-    <View
-      style={{
-        height: 170,
-        width: width * 0.75,
-        backgroundColor: '#0a96ea',
-        borderRadius: 24,
-        marginLeft: 48,
-        alignSelf: 'center',
-      }}>
-      <ImageContainer />
-      <View style={{marginLeft: 80, marginTop: 16, flexDirection: 'column'}}>
-        <Text style={{color: 'white', fontSize: 18, fontWeight: 'bold'}}>
-          {title}
-        </Text>
-        <Text style={{color: '#dbdbdb', fontSize: 12, fontWeight: '400'}}>
-          {subtitle}
-        </Text>
+    <View style={container(width, height, borderRadius, backgroundColor)}>
+      <ImageContainer {...props} />
+      <View style={styles.contentContainer}>
+        <Text style={titleStyle(titleColor)}>{title}</Text>
+        <Text style={subtitleStyle(subtitleColor)}>{subtitle}</Text>
         {renderStarReview()}
-        <View
-          style={{
-            marginTop: 24,
-            flexDirection: 'row',
-            alignSelf: 'flex-start',
-            justifyContent: 'space-around',
-          }}>
-          <View style={{alignSelf: 'flex-start', flexDirection: 'column'}}>
-            <Text style={{color: 'white', fontSize: 11}}>Days</Text>
-            <Text
-              style={{
-                color: 'white',
-                fontSize: 12,
-                marginTop: 3,
-                fontWeight: 'bold',
-              }}>
-              4 Days
+        <View style={styles.footerContainer}>
+          <View style={styles.leftSideContainer}>
+            <Text style={leftSideTitleStyle(leftSideColor)}>
+              {leftSideTitle}
+            </Text>
+            <Text style={leftSideValueStyle(leftSideValueColor)}>
+              {leftSideValue}
             </Text>
           </View>
-          <View style={{flexDirection: 'row'}}>
-            <View
-              style={{
-                width: 1,
-                height: 35,
-                opacity: 0.5,
-                marginLeft: 40,
-                backgroundColor: '#c4c4c4',
-              }}
-            />
-            <View
-              style={{
-                alignSelf: 'flex-start',
-                marginLeft: 12,
-                flexDirection: 'column',
-              }}>
-              <Text style={{color: 'white', fontSize: 11}}>Price</Text>
-              <Text
-                style={{
-                  marginTop: 3,
-                  fontSize: 12,
-                  color: 'white',
-                  fontWeight: 'bold',
-                }}>
-                $1500
+          <View style={styles.rightSideContainer}>
+            <View style={dividerStyle(dividerColor)} />
+            <View style={styles.rightSideContainer}>
+              <Text style={rightSideTitleStyle(rightSideColor)}>
+                {rightSideTitle}
+              </Text>
+              <Text style={rightSideValueStyle(rightSideValueColor)}>
+                {rightSideValue}
               </Text>
             </View>
           </View>
@@ -103,12 +89,42 @@ const CardContainer = props => {
 
 CardContainer.propTypes = {
   title: PropTypes.string,
+  width: PropTypes.number,
+  height: PropTypes.number,
   subtitle: PropTypes.string,
+  titleColor: PropTypes.string,
+  borderRadius: PropTypes.number,
+  dividerColor: PropTypes.string,
+  leftSideColor: PropTypes.string,
+  leftSideTitle: PropTypes.string,
+  subtitleColor: PropTypes.string,
+  leftSideValue: PropTypes.string,
+  rightSideValue: PropTypes.string,
+  rightSideColor: PropTypes.string,
+  rightSideTitle: PropTypes.string,
+  backgroundColor: PropTypes.string,
+  leftSideValueColor: PropTypes.string,
+  rightSideValueColor: PropTypes.string
 };
 
 CardContainer.defaultProps = {
-  title: 'Island Bali',
-  subtitle: 'Indonesia',
+  height: 170,
+  borderRadius: 24,
+  width: width * 0.75,
+  titleColor: "white",
+  title: "Island Bali",
+  leftSideTitle: "Days",
+  subtitle: "Indonesia",
+  leftSideColor: "white",
+  dividerColor: "#c4c4c4",
+  leftSideValue: "4 Days",
+  rightSideColor: "white",
+  rightSideValue: "$1500",
+  rightSideTitle: "Price",
+  subtitleColor: "#dbdbdb",
+  backgroundColor: "#0a96ea",
+  leftSideValueColor: "white",
+  rightSideValueColor: "white"
 };
 
 export default CardContainer;
