@@ -17,7 +17,7 @@ export function titleStyle(titleColor) {
   };
 }
 
-export function subtitleColor(subtitleColor) {
+export function subtitleStyle(subtitleColor) {
   return {
     fontSize: 12,
     fontWeight: "400",
@@ -32,7 +32,7 @@ export function leftSideTitleStyle(leftSideColor) {
   };
 }
 
-export function leftSideValueColor(leftSideValueColor) {
+export function leftSideValueStyle(leftSideValueColor) {
   return {
     fontSize: 12,
     marginTop: 3,
@@ -68,7 +68,7 @@ export function rightSideValueStyle(rightSideValueColor) {
 }
 
 export default {
-  styleReviewStyle: {
+  starReviewStyle: {
     marginTop: 16,
     alignSelf: "flex-start"
   },
@@ -93,7 +93,7 @@ export default {
     flexDirection: "column"
   },
   rightSideContainer: { flexDirection: "row" },
-  rightSideContainer: {
+  rightSideContainerGlue: {
     marginLeft: 12,
     alignSelf: "flex-start",
     flexDirection: "column"

@@ -7,6 +7,7 @@ import styles, {
   container,
   titleStyle,
   dividerStyle,
+  subtitleStyle,
   leftSideTitleStyle,
   leftSideValueStyle,
   rightSideTitleStyle,
@@ -56,7 +57,7 @@ const CardContainer = props => {
 
   return (
     <View style={container(width, height, borderRadius, backgroundColor)}>
-      <ImageContainer {...props} />
+      <ImageContainer props={props} />
       <View style={styles.contentContainer}>
         <Text style={titleStyle(titleColor)}>{title}</Text>
         <Text style={subtitleStyle(subtitleColor)}>{subtitle}</Text>
@@ -72,7 +73,7 @@ const CardContainer = props => {
           </View>
           <View style={styles.rightSideContainer}>
             <View style={dividerStyle(dividerColor)} />
-            <View style={styles.rightSideContainer}>
+            <View style={styles.rightSideContainerGlue}>
               <Text style={rightSideTitleStyle(rightSideColor)}>
                 {rightSideTitle}
               </Text>
